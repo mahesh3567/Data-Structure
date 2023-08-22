@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int matrix_multiplication(int *arr1, int *arr2, int *arr3, int n, int m, int p) {
+  if (n == 0 || m == 0 || p == 0) {
+    return 0;
+  }
+
+  return arr1[0] * arr2[0] + matrix_multiplication(arr1 + 1, arr2 + 1, arr3 + 1, n - 1, m - 1, p - 1);
+}
+
+int main() {
+	printf(" mahesh reddy \n 192210708 \n");
+  int arr1[] = {1, 2, 3, 4, 5};
+  int arr2[] = {6, 7, 8, 9, 10};
+  int arr3[5 * 5];
+  int n = sizeof(arr1) / sizeof(arr1[0]);
+  int m = sizeof(arr2) / sizeof(arr2[0]);
+  int p = sizeof(arr3) / sizeof(arr3[0]);
+
+  int product = matrix_multiplication(arr1, arr2, arr3, n, m, p);
+
+  printf("The product of the two matrices is: %d\n", product);
+
+  return 0;
+}
