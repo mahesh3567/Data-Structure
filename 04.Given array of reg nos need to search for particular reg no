@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int search_reg_no(int *arr, int n, int reg_no) {
+  int i;
+
+  for (i = 0; i < n; i++) {
+    if (arr[i] == reg_no) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+int main() {
+	printf(" mahesh reddy \n 192210708 \n");
+  int arr[] = {1234, 5678, 9012, 3456, 7890};
+  int n = sizeof(arr) / sizeof(arr[0]);
+  int reg_no = 1234;
+
+  int index = search_reg_no(arr, n, reg_no);
+
+  if (index == -1) {
+    printf("Registration number not found.\n");
+  } else {
+    printf("Registration number found at index %d.\n", index);
+  }
+
+  return 0;
+}
